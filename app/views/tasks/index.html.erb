@@ -8,7 +8,10 @@
     <%= task.description %>
     <%= link_to 'Show details', task_path(id: task.id) %>
     <%= link_to 'Edit task', edit_task_path(id: task.id) %>
-    <%= link_to 'Delete task', task_path(id: task.id, method: :delete) %>
+    <%= link_to 'Delete task', task_path(id: task.id),
+      method: :delete,
+      data: { confirm: "Are you sure?" }
+    %>
     </li>
 <% end %>
 </ol>
