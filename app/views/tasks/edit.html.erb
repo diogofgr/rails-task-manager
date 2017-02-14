@@ -1,1 +1,11 @@
 <h1>Tasks#edit</h1>
+
+<h2><%= @task.description %></h2>
+<h4>Status: <%= @task.done ? "[x] - Done" : "[ ] - Not Done" %></h4>
+<h4>Created: <%= @task.created_at %></h4>
+<h4>Last updated: <%= @task.updated_at %></h4>
+<h4>task id: <%= @task.id %></h4>
+
+
+<%= render 'form' %>
+<h5><%= link_to 'Back to list', tasks_index_path %></h5>

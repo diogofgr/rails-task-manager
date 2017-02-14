@@ -1,16 +1,15 @@
 <h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<p><%= link_to 'New task', new_task_path %></p>
 
-<ul>
+<ol>
 <% @tasks.each do |task| %>
-  <li><%= task.description %></h2>
-  <p2><%= task.done ? "Done" : "Not Done" %></p2>
+  <li>
+    <%= task.done ? "[x]" : "[ ]" %>
+    <%= task.description %>
+    <%= link_to 'Show details', task_path(id: task.id) %>
+    <%= link_to 'Edit task', edit_task_path(id: task.id) %>
+    <%= link_to 'Delete task', task_path(id: task.id, method: :delete) %>
+    </li>
 <% end %>
-</ul>
+</ol>
 
-<!--     Should display a list of all tasks and, for each task:
-        a link to its show view (use a link_to helper)
-        a link to its edit view
-        a link to its delete action. Hint: a standard link does not allow to perform DELETE request, so here you should add a method: :delete option to your link_to helper.
-    Should include a link to the new view to create a new task
- -->

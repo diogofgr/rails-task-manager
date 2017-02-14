@@ -1,1 +1,10 @@
 <h1>Tasks#show</h1>
+
+<h2><%= @task.description %></h2>
+<h4>Status: <%= @task.done ? "[x] - Done" : "[ ] - Not Done" %></h4>
+<h4>Created: <%= @task.created_at %></h4>
+<h4>Last updated: <%= @task.updated_at %></h4>
+<h4>task id: <%= @task.id %></h4>
+
+<h5><%= link_to 'Back to list', tasks_index_path %></h5>
+<!-- Should display the task's details (content, date of creation, etc.) and a back-link to the index page. -->
